@@ -19,14 +19,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Build production images
-      - run: docker build -t docker.pkg.github.com/sindbadia/multi-docker/multi-client:latest ./client
-      - run: docker build -t docker.pkg.github.com/sindbadia/multi-docker/multi-nginx:latest ./nginx
-      - run: docker build -t docker.pkg.github.com/sindbadia/multi-docker/multi-server:latest ./server
-      - run: docker build -t docker.pkg.github.com/sindbadia/multi-docker/multi-worker:latest ./worker
+      - run: docker build -t sindbadia/multi-client ./client
+      - run: docker build -t sindbadia/multi-nginx ./nginx
+      - run: docker build -t sindbadia/multi-server ./server
+      - run: docker build -t sindbadia/multi-worker ./worker
       # Login to Docker GitHub CLI
-      - run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+      - run: echo "$DOCKER_PASSWORD" | docker login -u sindbadia --password-stdin
       # Push to GitHub packages
-      - run: docker push docker.pkg.github.com/sindbadia/multi-docker/multi-client:latest
-      - run: docker push docker.pkg.github.com/sindbadia/multi-docker/multi-nginx:latest
-      - run: docker push docker.pkg.github.com/sindbadia/multi-docker/multi-server:latest
-      - run: docker push docker.pkg.github.com/sindbadia/multi-docker/multi-worker:latest
+      - run: docker push sindbadia/multi-client
+      - run: docker push sindbadia/multi-nginx
+      - run: docker push sindbadia/multi-server
+      - run: docker push sindbadia/multi-worker
