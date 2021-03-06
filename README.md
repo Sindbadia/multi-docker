@@ -1,5 +1,6 @@
 # Microservices Demo
 
-[![Deploys](https://github.com/Sindbadia/multi-docker/actions/workflows/deploys.yml/badge.svg)](https://github.com/Sindbadia/multi-docker/actions/workflows/deploys.yml)
+[![Publish](https://github.com/Sindbadia/multi-docker/actions/workflows/publish.yml/badge.svg)](https://github.com/Sindbadia/multi-docker/actions/workflows/publish.yml)
+[![Test](https://github.com/Sindbadia/multi-docker/actions/workflows/test.yml/badge.svg)](https://github.com/Sindbadia/multi-docker/actions/workflows/test.yml)
 
 > Microservices demo app with Docker & Actions
